@@ -94,6 +94,3 @@ This keeps the chatbot focused, informative, and aligned with factual sources.
 **Query Expansion** – Use **synonyms and keyword expansion** to improve search relevance.  
 **Optimized Chunking** – Experiment with **semantic chunking** rather than fixed-size segmentation for better retrieval efficiency.  
 
----
-
-Let me know if you need further modifications! 🚀
