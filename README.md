@@ -1,9 +1,8 @@
 Here’s your content converted into Markdown format:
 
 # Tech Notes
-
-**Github Link:** [here](https://github.com/Piyush-ag/RAG-chat)  
-**Hallucination Test:** [here](https://docs.google.com/document/d/1idHrVoeZVzvd5H-JuOjWftX2F4bc4BSN2H6985oSsBc/edit?usp=sharing)
+**Tech Notes:** [here](https://docs.google.com/document/d/19BR5yyjkEyBbxJGNeeTxqNOojOVnvbB2ETjn1antwX4/edit?usp=sharing)
+**Hallucination and Boundary Test:** [here](https://docs.google.com/document/d/1idHrVoeZVzvd5H-JuOjWftX2F4bc4BSN2H6985oSsBc/edit?usp=sharing)
 
 ---
 

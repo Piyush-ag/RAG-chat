@@ -2,17 +2,18 @@ import os
 import fitz  # PyMuPDF for PDFs
 import streamlit as st
 import tiktoken
-from langchain.vectorstores import FAISS
-from langchain.embeddings import OpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain_community.embeddings import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain_openai import ChatOpenAI
 from langchain.docstore.document import Document
 import re
 import tempfile
 import time
+import pdfplumber
 
 # Set OpenAI API Key
-os.environ["OPENAI_API_KEY"] = "yout_api_key"
+os.environ["OPENAI_API_KEY"] = "your_own_api"
 
 # Streamlit UI Configuration
 st.set_page_config(page_title="Chat with Your PDFs (GPT-4o)", layout="wide")
@@ -29,8 +30,11 @@ uploaded_files = st.file_uploader("Upload PDF Files", type=["pdf"], accept_multi
 
 # Function to extract text from PDFs
 def extract_text(filepath):
-    doc = fitz.open(filepath)
-    text = "\n".join([page.get_text("text") for page in doc])
+    """Extracts text from a PDF using PDFPlumber."""
+    text = ""
+    with pdfplumber.open(filepath) as pdf:
+        for page in pdf.pages:
+            text += page.extract_text() + "\n" if page.extract_text() else ""
     return text
 
 # Function to chunk text using `chunk_by_headings`
